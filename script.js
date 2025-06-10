@@ -13,8 +13,8 @@ function digitarTexto(texto, elementoId, velocidade = 100) {
 
   escrever();
 }
-
-digitarTexto("Estudante de Engenharia de Software | Futuro Dev Back-End", "nome-digitando", 70);
+digitarTexto("Fabrizzio Conrado", "nome-digitando", 100);
+digitarTexto("Estudante de Engenharia de Software | Futuro Dev Back-End", "estudo-digitando", 70);
 function revelarAoScroll() {
   const elementos = document.querySelectorAll('.reveal');
   elementos.forEach(el => {
