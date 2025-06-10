@@ -29,14 +29,23 @@ function revelarAoScroll() {
 
 window.addEventListener('scroll', revelarAoScroll);
 window.addEventListener('load', revelarAoScroll);
-fetch("projetos.json")
-  .then(response => response.json())
-  .then(data => {
-    const lista = document.getElementById("lista-projetos");
-    data.forEach(projeto => {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${projeto.nome}</strong><br><small>${projeto.linguagens} – ${projeto.descricao}</small>`;
-      lista.appendChild(li);
-    });
-  })
-  .catch(err => console.error("Erro ao carregar projetos:", err));
+// Dados embutidos localmente, sem fetch
+const projetos = [
+  {
+    nome: "App de Mover Cursor",
+    descricao: "Automação com Python",
+    linguagens: "Python"
+  },
+  {
+    nome: "Calculadora de Juros Selic",
+    descricao: "Cálculo de rendimentos com HTML e JS",
+    linguagens: "HTML, JavaScript"
+  }
+];
+
+const lista = document.getElementById("lista-projetos");
+projetos.forEach(projeto => {
+  const li = document.createElement("li");
+  li.innerHTML = `<strong>${projeto.nome}</strong><br><small>${projeto.linguagens} – ${projeto.descricao}</small>`;
+  lista.appendChild(li);
+});
