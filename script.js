@@ -29,6 +29,14 @@ function revelarAoScroll() {
 
 window.addEventListener('scroll', revelarAoScroll);
 window.addEventListener('load', revelarAoScroll);
+
+const lista = document.getElementById("lista-projetos");
+projetos.forEach(projeto => {
+  const li = document.createElement("li");
+  li.innerHTML = `<strong>${projeto.nome}</strong><br><small>${projeto.linguagens} – ${projeto.descricao}</small>`;
+  lista.appendChild(li);
+});
+
 // Dados embutidos localmente, sem fetch
 const projetos = [
   {
@@ -42,10 +50,3 @@ const projetos = [
     linguagens: "HTML, JavaScript"
   }
 ];
-
-const lista = document.getElementById("lista-projetos");
-projetos.forEach(projeto => {
-  const li = document.createElement("li");
-  li.innerHTML = `<strong>${projeto.nome}</strong><br><small>${projeto.linguagens} – ${projeto.descricao}</small>`;
-  lista.appendChild(li);
-});
