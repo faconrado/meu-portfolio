@@ -50,3 +50,9 @@ const projetos = [
     linguagens: "HTML, JavaScript"
   }
 ];
+
+// local para salvar a foto em localStorage
+reader.onload = function (e) {
+  uploadContainer.style.backgroundImage = `url('${e.target.result}')`;
+  placeholderText.style.display = "none";
+};
