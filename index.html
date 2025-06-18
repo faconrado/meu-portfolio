@@ -84,12 +84,12 @@
   const uploadContainer = document.getElementById("uploadContainer");
   const placeholderText = document.getElementById("placeholderText");
 
-// Quando o usuário clicar na área, ativa o seletor de arquivo.
+  // ✅ Clique na área da imagem chama o seletor de arquivos corretamente
   uploadContainer.addEventListener("click", () => {
     uploadInput.click();
   });
 
-// Quando a imagem for escolhida. 
+  // ✅ Ao selecionar o arquivo, carrega e salva
   uploadInput.addEventListener("change", function () {
     const file = this.files[0];
     if (file) {
@@ -97,28 +97,27 @@
 
       reader.onload = function (e) {
         const imageData = e.target.result;
-      
-      <!-- Define a imagem como fundo. -->
-      uploadContainer.style.backgroundImage = 'url('${imageData}')';
-      placeholderText.style.display = "none";
+        uploadContainer.style.backgroundImage = `url('${imageData}')`;
+        placeholderText.style.display = "none";
 
-      <!-- Salva a imagem no LocalStorage. -->
-      localStorage.setItem("fotoPerfil", imageData);
+        // ✅ Salvar no localStorage
+        localStorage.setItem("fotoPerfil", imageData);
       };
 
       reader.readAsDataURL(file);
     }
   });
 
-// Ao carregar a página, verifica se já existe uma imagem salva.
-window.addEventListener("DOMContentLoaded", () => {
-  const savedImage = localStorage.getItem("fotoPerfil");
-  if (savedImage){
-    uploadContainer.style.backgroundImage = 'url('${savedImage}')';
-    placeholderText.style.display = "none";
-  }
-});
+  // ✅ Carregar imagem do localStorage ao abrir a página
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedImage = localStorage.getItem("fotoPerfil");
+    if (savedImage) {
+      uploadContainer.style.backgroundImage = `url('${savedImage}')`;
+      placeholderText.style.display = "none";
+    }
+  });
 </script>
+
 
 <!-- Local onde fica uma breve apresentação -->
   <main>
