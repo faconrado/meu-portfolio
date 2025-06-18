@@ -13,10 +13,68 @@
     <h1 id="estudo-digitando"></h1>
     </header>
 
-<input type="file" id="upload" accept="image/*">
-<br>
-<img id="preview" src="" alt="Prévia da imagem" style="max-width: 300px; display: none;">
+<!-- Local onde posso colocar minha foto para melhor apresentação no portfolio -->
+<style>
+  .upload-container {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+  }
 
+  #upload {
+    display: none;
+  }
+
+  .placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+  }
+</style>
+
+<div class="upload-container" id="uploadContainer">
+  <span class="placeholder" id="placeholderText">Clique para<br>enviar foto</span>
+  <input type="file" id="upload" accept="image/*">
+</div>
+
+<script>
+  const uploadInput = document.getElementById("upload");
+  const uploadContainer = document.getElementById("uploadContainer");
+  const placeholderText = document.getElementById("placeholderText");
+
+  // Clique no container ativa o input oculto
+  uploadContainer.addEventListener("click", () => {
+    uploadInput.click();
+  });
+
+  // Quando o usuário seleciona a imagem
+  uploadInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        uploadContainer.style.backgroundImage = `url('${e.target.result}')`;
+        placeholderText.style.display = "none";
+      };
+
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+<!-- Local onde fica uma breve apresentação -->
   <main>
     <section class="sobre reveal">...</section>
       <h2>Sobre Mim</h2>
@@ -24,6 +82,7 @@
    
     </section>
 
+    <!-- Meus contatos pessoais -->
       <p>
         <a href="mailto:f.conrado88@hotmail.com"><i class="fas fa-envelope"></i> Email</a> |
         <a href="https://github.com/faconrado" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
@@ -33,6 +92,7 @@
 
     </section>
 
+    <!-- Local onde vou colocar meus projetos para apreciação -->
     <section class="projetos reveal">...</section>
       <h2>Projetos</h2>
       <ul>
@@ -65,6 +125,7 @@
     
     </section>
 
+    <!-- Local onde vou colocando os cursos que estarei fazendo no momento. -->
     <section class="projetos reveal">...</section>
     <h2>Participando dos Cursos</h2>
       <ul>
@@ -79,12 +140,14 @@
         <ul id="lista-projetos"></ul>
         </section>
 
-      <h2>Contato</h2>
+      <!-- Meu curriculum disponivel para download. -->
+        <h2>Contato</h2>
       <section class="curriculo reveal">
   <h2>Currículo</h2>
   <a href="Fabrizzio_20250408_V2.3.pdf" download class="botao-cv">📄 Baixar Currículo (PDF)</a>
 
-    <section class="contato reveal">
+  <!-- Formulario onde poderam entrar em contato comigo, caso queiram. -->  
+  <section class="contato reveal">
   <h2>Fale Comigo</h2>
   <form action="https://formsubmit.co/f.conrado88@hotmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
@@ -96,25 +159,7 @@
 
 
   </main>
+  <!-- Chamada do java script e outras chamadas caso necessário. -->
 <script src="script.js"></script>
-<script>
-  const input = document.getElementById("upload");
-  const preview = document.getElementById("preview");
-
-  input.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-
-      reader.addEventListener("load", function () {
-        preview.src = reader.result;
-        preview.style.display = "block";
-      });
-
-      reader.readAsDataURL(file);
-    }
-  });
-</script>
-
 </body>
 </html>
