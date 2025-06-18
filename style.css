@@ -132,3 +132,15 @@ button {
 button:hover {
   background-color: #004080;
 }
+
+.upload-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+  border: 2px dashed #ccc;
+}
+

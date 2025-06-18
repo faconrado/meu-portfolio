@@ -66,10 +66,9 @@
 <div class="perfil-container">
   <!-- Foto -->
   <div class="upload-container" id="uploadContainer">
-    <span class="placeholder" id="placeholderText">Clique para<br>enviar foto</span>
-    </div>
-
+  <!--  <span class="placeholder" id="placeholderText">Clique para<br>enviar foto</span> -->
   <input type="file" id="upload" accept="image/*">
+  </div>
 
   <!-- Apresentação -->
   <div class="apresentacao">
@@ -204,5 +203,45 @@
   </main>
   <!-- Chamada do java script e outras chamadas caso necessário. -->
 <script src="script.js"></script>
+<script>
+  const uploadInput = document.getElementById("upload");
+  const uploadContainer = document.getElementById("uploadContainer");
+
+  // Carregar imagem da API ao abrir
+  window.addEventListener("DOMContentLoaded", () => {
+    fetch("http://localhost:8080/perfil/foto")
+      .then(res => {
+        if (!res.ok) throw new Error("Sem imagem");
+        return res.blob();
+      })
+      .then(blob => {
+        const url = URL.createObjectURL(blob);
+        uploadContainer.style.backgroundImage = `url('${url}')`;
+        uploadContainer.style.backgroundSize = "cover";
+        uploadContainer.style.backgroundPosition = "center";
+      })
+      .catch(() => {
+        uploadContainer.style.backgroundColor = "#f5f5f5";
+      });
+  });
+
+  // Clique para abrir o seletor de arquivo
+  uploadContainer.addEventListener("click", () => {
+    uploadInput.click();
+  });
+
+  // Ao selecionar imagem, envia para o back-end
+  uploadInput.addEventListener("change", () => {
+    const file = uploadInput.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+
+    fetch("http://localhost:8080/perfil/foto", {
+      method: "POST",
+      body: formData
+    }).then(() => location.reload());
+  });
+</script>
+
 </body>
 </html>
