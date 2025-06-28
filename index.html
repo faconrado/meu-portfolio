@@ -77,46 +77,9 @@
   </div>
 </div>
 
-<!-- 🔁 Script de carregamento da imagem -->
-<script>
-  const uploadInput = document.getElementById("upload");
-  const uploadContainer = document.getElementById("uploadContainer");
-  const placeholderText = document.getElementById("placeholderText");
-
-  // ✅ Clique na área da imagem chama o seletor de arquivos corretamente
-  uploadContainer.addEventListener("click", () => {
-    uploadInput.click();
-  });
-
-  // ✅ Ao selecionar o arquivo, carrega e salva
-  uploadInput.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        const imageData = e.target.result;
-        uploadContainer.style.backgroundImage = `url('${imageData}')`;
-        placeholderText.style.display = "none";
-
-        // ✅ Salvar no localStorage
-        localStorage.setItem("fotoPerfil", imageData);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  });
-
-  // ✅ Carregar imagem do localStorage ao abrir a página
-  window.addEventListener("DOMContentLoaded", () => {
-    const savedImage = localStorage.getItem("fotoPerfil");
-    if (savedImage) {
-      uploadContainer.style.backgroundImage = `url('${savedImage}')`;
-      placeholderText.style.display = "none";
-    }
-  });
-</script>
-
+<!-- Upload da foto do perfil no portfólio. -->
+<h2>Foto de perfil</h2>
+<img src="Foto Curriculo.jpg" alt="Minha Foto de Perfil" style="max-width: 300px; border-radius: 10px;">
 
 <!-- Local onde fica uma breve apresentação -->
   <main>
