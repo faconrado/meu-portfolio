@@ -179,6 +179,9 @@ button:hover {
   font-size: 16px;
   text-align: left;
   max-width: 600px;          /* define um limite para o texto */
+  display: flex;
+  flex-direction: column;    /* garante que h2 fique em cima do p */
+  gap: 10px;                 /* espaço entre o h2 e o parágrafo */
 }
 
 .foto-perfil {
