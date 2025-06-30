@@ -166,25 +166,27 @@ button:hover {
 }
 
 .perfil-container {
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    gap: 40px;
-    padding: 40px;
-    flex-wrap: wrap; /* para responsividade */
+    display: flex;      /* ativa o Layout lado a lado */
+    align-items: left;  /* alinha verticalmente no centro */
+    gap: 30px;          /* espaçamanto entre a imagem e o texto */
+    margin-left: 40px;  /* margem da esquerda para afastar da borda */
+    margin-top: 20px;
+    /* flex-wrap: wrap;  para responsividade */
   }
 
   .apresentacao {
-  flex: 1;
-  min-width: 250px;
-  padding-left: 500px;
-  
+  /*flex: 1; */
+  font-size: 16px;
+  text-align: left;
+  max-width: 600px;          /* define um limite para o texto */
 }
 
-.foto-perfil img {
-  max-width: 300px;
+.foto-perfil {
+  max-width: 200px;
+  border-radius: 10px;
+/*  max-width: 300px;
   border-radius: 10px;
   width: 100%;
   height: auto;
-  margin-left: 100px;  
+  margin-left: 400px;  */
 }
