@@ -20,10 +20,6 @@ header {
   color: white;
   text-align: center;
 
-  background-color: #005ea2;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
 }
 
 .foto-fundoNome {
@@ -195,5 +191,8 @@ button:hover {
 
   background-image: url("img/Foto Curriculo.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: contain;
+  background-position: center;
+  width: 400px;
+  height: 400px;
 }
