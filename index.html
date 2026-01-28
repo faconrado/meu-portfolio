@@ -18,63 +18,6 @@
   </div>
 </body>
 
-<!-- Local onde posso colocar minha foto para melhor apresentação no portfolio -->
-<!-- <style>
-  .perfil-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 40px;
-    flex-wrap: wrap; /* para responsividade */
-  }
-
-  .upload-container {
-    width: 300px;
-    height: 500px;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: #f5f5f5;
-    background-size: cover;
-    background-position: center;
-  }
-
-  #upload {
-    display: none;
-  }
-
-  .placeholder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #888;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .apresentacao {
-    max-width: 400px;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  .apresentacao h2 {
-    margin-bottom: 10px;
-  }
-</style> -->
-
-<!-- 🔄 Estrutura principal -->
-<!-- <div class="perfil-container">
-  <!-- Foto 
-  <div class="upload-container" id="uploadContainer">
-  <!--  <span class="placeholder" id="placeholderText">Clique para<br>enviar foto</span> 
-  <input type="file" id="upload" accept="image/*">
-  </div> -->
-
 <div class="perfil-container">
   <!-- Upload da foto do perfil no portfólio. --> 
   <img src="Foto Curriculo.jpg" alt="Minha Foto de Perfil" class="foto-perfil">
@@ -178,41 +121,7 @@
 <script>
   const uploadInput = document.getElementById("upload");
   const uploadContainer = document.getElementById("uploadContainer");
-
-  // Carregar imagem da API ao abrir
-  /* window.addEventListener("DOMContentLoaded", () => {
-    fetch("http://localhost:8080/perfil/foto")
-      .then(res => {
-        if (!res.ok) throw new Error("Sem imagem");
-        return res.blob();
-      })
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        uploadContainer.style.backgroundImage = `url('${url}')`;
-        uploadContainer.style.backgroundSize = "cover";
-        uploadContainer.style.backgroundPosition = "center";
-      })
-      .catch(() => {
-        uploadContainer.style.backgroundColor = "#f5f5f5";
-      });
-  }); */
-
-  /* Clique para abrir o seletor de arquivo
-  uploadContainer.addEventListener("click", () => {
-    uploadInput.click();
-  });
-
-  // Ao selecionar imagem, envia para o back-end
-  uploadInput.addEventListener("change", () => {
-    const file = uploadInput.files[0];
-    const formData = new FormData();
-    formData.append("file", file);
-
-    fetch("http://localhost:8080/perfil/foto", {
-      method: "POST",
-      body: formData
-    }).then(() => location.reload()); 
-  }); */
+  
 </script>
 
 </body>
