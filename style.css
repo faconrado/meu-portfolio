@@ -1,46 +1,46 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #b4b1b1;
   color: #222;
 }
 
-header {
+/* Conteiner geral (centralizar todas as seções) */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header.header {
   width: 100%;
   height: 300px;
   background-image: url('img/paginaInicial1.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  color: white;
+  
 
 }
 
 .foto-fundoNome {
   position: relative;
-  z-index: 2; /* Garante que o texto fique na frente */
+  z-index: 1; /* Garante que o texto fique na frente */
 }
 
-#estudo-digitando,
-#nome-digitando {
+#nome-digitando,
+#estudo-digitando{
   font-size: 28px;
   font-weight: bold;
 }
 
-main {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
 section {
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 h2 {
@@ -49,10 +49,53 @@ h2 {
   padding-bottom: 5px;
 }
 
-h3 {
-  color: #01070c;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 5px;
+.perfil-container {
+  display: flex;      /* ativa o Layout lado a lado */
+  align-items: center;  /* alinha verticalmente no centro */
+  justify-content: center; /* centraliza o conteúdo interno. */
+  gap: 30px;          /* espaçamanto entre a imagem e o texto */
+
+  /* largura limitada + margem auto */
+  max-width: 1000px;  /* limita largura para não ficar "espalhado" demais. */
+  margin: 20px auto; /* centraliza o bloco na página */
+  padding: 0 20px;  /* respiro nas laterais em telas menores */
+
+  flex-wrap: wrap;    /* para responsividade */
+}
+
+.foto-perfil {
+  width: 280px;
+  height: 380px; /* controla o tamanho do card */
+  border-radius: 10px;
+
+  background-image: url("img/Foto Curriculo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  flex: 0 0 auto;   /* mantém o tamanho fixo */
+}
+
+.apresentacao {
+  flex: 1;
+  max-width: 650px; /* define um limite para o texto */
+  display: flex;
+  flex-direction: column;    /* garante que h2 fique em cima do p */
+  gap: 10px;                 /* espaço entre o h2 e o parágrafo */   
+}
+
+.contatos a {
+  color: #005ea2;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.contatos a:hover {
+  text-decoration: underline;
+}
+
+.separador {
+  margin: 0 8px;  
 }
 
 ul {
@@ -67,42 +110,6 @@ ul li {
   border-radius: 5px;
 }
 
-a {
-  color: #005ea2;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
-
-  header h1 {
-    font-size: 24px;
-  }
-
-  header p {
-    font-size: 16px;
-  }
-  h3 {
-    font-size: 8px;
-  }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s ease;
-}
-
-.reveal.mostrar {
-  opacity: 1;
-  transform: none;
-}
 .botao-cv {
   display: inline-block;
   background-color: #005ea2;
@@ -117,13 +124,15 @@ a:hover {
 .botao-cv:hover {
   background-color: #004080;
 }
+
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -150,6 +159,55 @@ button:hover {
   background-color: #004080;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+
+.reveal.mostrar {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  #nome-digitando,
+  #estudo-digitando{
+    font-size: 22px;
+  }
+
+  .foto-perfil {
+    width: 240px;
+    height: 320px;
+  }
+
+  .apresentacao {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .upload-container {
   width: 300px;
   height: 300px;
@@ -161,38 +219,8 @@ button:hover {
   border: 2px dashed #ccc;
 }
 
-.perfil-container {
-    display: flex;      /* ativa o Layout lado a lado */
-    align-items: left;  /* alinha verticalmente no centro */
-    gap: 30px;          /* espaçamanto entre a imagem e o texto */
-    margin-left: 40px;  /* margem da esquerda para afastar da borda */
-    margin-top: 20px;
-    flex-wrap: wrap;    /* para responsividade */
-    height: 400px;    /* altura do container */
-  }
 
-  .apresentacao {
-  flex: 1; 
-  font-size: 16px;
-  text-align: left;
-  max-width: 600px;          /* define um limite para o texto */
-  display: flex;
-  flex-direction: column;    /* garante que h2 fique em cima do p */
-  gap: 10px;                 /* espaço entre o h2 e o parágrafo */
-}
 
-.foto-perfil {
-  max-width: 300px;
-  max-height: 500px;
-  border-radius: 10px;
-  width: 100%;
-  height: auto;
-  margin-left: 510px;  
 
-  background-image: url("img/Foto Curriculo.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 400px;
-  height: 400px;
-}
+
+

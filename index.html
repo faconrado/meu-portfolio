@@ -4,128 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio - Fabrizzio</title>
-  <link rel="stylesheet" href="style.css" />  
+
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="header">
-    <header>
-      <div class="foto-fundoNome">
-        <h1 id="nome-digitando"></h1>
-        <h1 id="estudo-digitando"></h1>
-      </div>
-    </header>
-  </div>
 
-<div class="perfil-container">
-  <div class="foto-perfil">
-    
-  </div>
-    <!-- Apresentação -->    
-    <div class="apresentacao">
-      <h2>Sobre Mim</h2>
+<body>
+  <header class="header">
+    <div class="foto-fundoNome">
+      <h1 id="nome-digitando"></h1>
+      <h1 id="estudo-digitando"></h1>
+    </div>
+  </header>
+
+  <main class="container"> 
+    <!-- SOBRE MIM -->
+    <section class="perfil-container reveal" aria-label="Sobre mim">
+      <div class="foto-perfil" role="img" aria-label="Minha foto de perfil"></div>
+   
+      <div class="apresentacao">
+        <h2>Sobre Mim</h2>
         <p>
           Sou apaixonado por tecnologia, programação e busco oportunidades como desenvolvedor back-end.<br> 
             Atualmente estudo Engenharia de Software na USF e me aperfeiçoo em Python e Java. 
         </p>
-    </div>          
-</div>
 
-
-<!-- Local onde fica uma breve apresentação -->
-  <main>
-    <section class="sobre reveal">...</section>
-        
-    </section>
-
-    <!-- Meus contatos pessoais -->
-      <p>
-        <a href="mailto:f.conrado88@hotmail.com"><i class="fas fa-envelope"></i> Email</a> |
-        <a href="https://github.com/faconrado" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
-        <a href="https://linkedin.com/in/fabrizzioconrado" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      </p>
-        </section>
-
+        <!-- Meus contatos pessoais -->
+        <p>
+          <a href="mailto:f.conrado88@hotmail.com"><i class="fas fa-envelope"></i> Email</a> |
+          <a href="https://github.com/faconrado" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+          <a href="https://linkedin.com/in/fabrizzioconrado" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </p>
+      </div>
     </section>
 
     <!-- Local onde vou colocar meus projetos para apreciação -->
-    <section class="projetos reveal">
+    <section class="reveal" aria-label="Projetos">
       <h2>Projetos</h2>
-      <ul id="lista-projetos">
-        <li>
-          <strong>
-            <a href="https://github.com/faconrado/MoverMouse_Pro_v4.0.git" target="_blank" rel="noopener noreferrer">
-            App de Mover Cursor
-            </a>
-          </strong><br>
-          <small>Python • Automação</small>
-        </li>
-        <li>
-          <strong>
-            <a href="https://github.com/faconrado/meu-portfolio.git" target="_blank" rel="noopener noreferrer">
-            Site portflio Fabrizzio
-            </a>
-          </strong><br>
-          <small>HTML • JavaScript • CSS</small>
-        </li>
-        <li>
-          <strong>
-            <a href="https://faconrado.github.io/site-calculadora-combustivel/" target="_blank" rel="noopener noreferrer">
-            Calculadora de Combustível
-            </a>
-          </strong><br>
-          <small>HTML • JavaScript • CSS</small>
-        </li>
-        <li>
-          <strong>
-            <a href="https://github.com/faconrado/siteTattoo---Portifolio.git" target="_blank" rel="noopener noreferrer">
-            Site Tattoo Portfólio
-            </a>
-          </strong><br>
-          <small>HTML • JavaScript • CSS</small>
-        </li>
-      </ul>
-    </section>
-    
+      <ul id="lista-projetos"></ul>
     </section>
 
     <!-- Local onde vou colocando os cursos que estarei fazendo no momento. -->
-    <section class="projetos reveal">...</section>
-    <h2>Participando dos Cursos</h2>
+    <section class="reveal" aria-label="Cursos">
+      <h2>Participando dos Cursos</h2>
       <ul>
-        <li>
-          <strong>
-            <h3>BootCamp Santander 2025 - Back-End com Java</h3>
-            <h3>BootCamp Suzano - Python Developer</h3>
-            <h3>Prof. Nelio Alves - Java COMPLETO, Programação Orientada a Objeto + Projetos</h3>
-          </a>
-          </strong>
-        </li>
-        <ul id="lista-projetos"></ul>
-        </section>
+        <li><strong>BootCamp Santander 2025 - Back-End com Java</strong></li>
+        <li><strong>BootCamp Suzano - Python Developer</strong></li>
+        <li><strong>Prof. Nelio Alves - Java COMPLETO, Programação Orientada a Objeto + Projetos</strong></li>
+      </ul>
+    </section>
 
-      <!-- Meu curriculum disponivel para download. -->
-        <h2>Contato</h2>
-      <section class="curriculo reveal">
-  <h2>Currículo</h2>
-  <a href="curriculo/Fabrizzio_Curriculo_Estagio_Software_v3.2.pdf" download class="botao-cv">📄 Baixar Currículo (PDF)</a>
+    <!-- Meu curriculum disponivel para download. -->
+    <section class="reveal" aria-label="Currículo">
+      <h2>Currículo</h2>
+      <a href="curriculo/Fabrizzio_Curriculo_Estagio_Software_v3.2.pdf" download class="botao-cv">📄 Baixar Currículo (PDF)</a>
+    </section>
 
-  <!-- Formulario onde poderam entrar em contato comigo, caso queiram. -->  
-  <section class="contato reveal">
-  <h2>Fale Comigo</h2>
-  <form action="https://formsubmit.co/f.conrado88@hotmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="email" name="email" placeholder="Seu email" required>
-    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-
-
+    <!-- Formulario onde poderam entrar em contato comigo, caso queiram. -->  
+    <section class="reveal" aria-label="Contato">
+      <h2>Fale Comigo</h2>
+      <form action="https://formsubmit.co/f.conrado88@hotmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="email" name="email" placeholder="Seu email" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
   </main>
   <!-- Chamada do java script e outras chamadas caso necessário. -->
-<script src="script.js"></script>
-
-
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,6 +1,10 @@
 console.log("Bem-vindo ao portfólio de Fabrizzio!");
-function digitarTexto(texto, elementoId, velocidade = 100) {
+
+function digitarTexto(texto, elementoId, velocidade = 90) {
   const el = document.getElementById(elementoId);
+  if (!el) return;
+
+  el.textContent = "";
   let i = 0;
 
   function escrever() {
@@ -13,46 +17,75 @@ function digitarTexto(texto, elementoId, velocidade = 100) {
 
   escrever();
 }
-digitarTexto("Fabrizzio Conrado", "nome-digitando", 100);
-digitarTexto("Estudante de Engenharia de Software | Futuro Dev Back-End", "estudo-digitando", 70);
-function revelarAoScroll() {
-  const elementos = document.querySelectorAll('.reveal');
-  elementos.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    const alturaJanela = window.innerHeight;
 
-    if (top < alturaJanela - 100) {
-      el.classList.add('mostrar');
-    }
-  });
-}
-
-window.addEventListener('scroll', revelarAoScroll);
-window.addEventListener('load', revelarAoScroll);
-
-const lista = document.getElementById("lista-projetos");
-projetos.forEach(projeto => {
-  const li = document.createElement("li");
-  li.innerHTML = `<strong>${projeto.nome}</strong><br><small>${projeto.linguagens} – ${projeto.descricao}</small>`;
-  lista.appendChild(li);
-});
-
-// Dados embutidos localmente, sem fetch
 const projetos = [
   {
     nome: "App de Mover Cursor",
     descricao: "Automação com Python",
-    linguagens: "Python"
+    linguagens: "Python",
+    link: "https://github.com/faconrado/MoverMouse_Pro_v4.0.git",
   },
   {
-    nome: "Calculadora de Juros Selic",
-    descricao: "Cálculo de rendimentos com HTML e JS",
-    linguagens: "HTML, JavaScript"
-  }
+    nome: "Site Portfólio (este)",
+    descricao: "Portfólio em HTML/CSS/JS",
+    linguagens: "HTML • CSS • JavaScript",
+    link: "https://faconrado.github.io/meu-portfolio/",
+  },
+  {
+    nome: "Calculadora de Combustível",
+    descricao: "Comparação de combustível e autonomia",
+    linguagens: "HTML • JavaScript • CSS",
+    link: "https://faconrado.github.io/site-calculadora-combustivel/",
+  },
+  {
+    nome: "Site Tattoo Portfólio",
+    descricao: "Portfólio para tatuador em HTML/CSS",
+    linguagens: "HTML • JavaScript • CSS",
+    link: "https://github.com/faconrado/siteTattoo---Portifolio.git",
+  },
 ];
 
-// local para salvar a foto em localStorage
-reader.onload = function (e) {
-  uploadContainer.style.backgroundImage = `url('${e.target.result}')`;
-  placeholderText.style.display = "none";
-};
+function renderizarProjetos() {
+  const lista = document.getElementById("lista-projetos");
+  if (!lista) return;
+
+  lista.innerHTML = projetos
+    .map(
+      (p) => `
+      <li>
+        <strong>
+          <a href="${p.link}" target="_blank" rel="noopener noreferrer">${p.nome}</a>
+        </strong><br>
+        <small>${p.linguagens} • ${p.descricao}</small>
+      </li>
+    `
+    )
+    .join("");
+}
+
+function ativarReveal() {
+  const elementos = document.querySelectorAll(".reveal");
+  if (!elementos.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("mostrar");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  elementos.forEach((el) => observer.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  digitarTexto("Fabrizzio Conrado", "nome-digitando", 100);
+  digitarTexto("Estudante de Engenharia de Software | Futuro Dev Back-End", "estudo-digitando", 50);
+
+  renderizarProjetos();
+  ativarReveal();
+});
