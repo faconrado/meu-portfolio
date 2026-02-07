@@ -47,6 +47,7 @@ h2 {
   color: #005ea2;
   border-bottom: 2px solid #eee;
   padding-bottom: 5px;
+  font-size: 20px;
 }
 
 .perfil-container {
@@ -81,7 +82,9 @@ h2 {
   max-width: 650px; /* define um limite para o texto */
   display: flex;
   flex-direction: column;    /* garante que h2 fique em cima do p */
-  gap: 10px;                 /* espaço entre o h2 e o parágrafo */   
+  gap: 10px;                 /* espaço entre o h2 e o parágrafo */ 
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;  
 }
 
 .contatos a {
