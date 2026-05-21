@@ -1,6 +1,6 @@
 console.log("Bem-vindo ao portfólio de Fabrizzio!");
 
-function digitarTexto(texto, elementoId, velocidade = 90) {
+function digitarTexto(texto, elementoId, velocidade = 80) {
   const el = document.getElementById(elementoId);
   if (!el) return;
 
@@ -84,7 +84,7 @@ function ativarReveal() {
 
 document.addEventListener("DOMContentLoaded", () => {
   digitarTexto("Fabrizzio Conrado", "nome-digitando", 100);
-  digitarTexto("Estudante de Engenharia de Software | Futuro Dev Back-End", "estudo-digitando", 50);
+  digitarTexto("Estudante de Engenharia de Software | Futuro Dev Full-Stack", "estudo-digitando", 50);
 
   renderizarProjetos();
   ativarReveal();
