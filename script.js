@@ -18,6 +18,14 @@ function digitarTexto(texto, elementoId, velocidade = 80) {
   escrever();
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  digitarTexto("Fabrizzio Conrado", "nome-digitando", 100);
+  digitarTexto("Estudante de Engenharia de Software | Futuro Dev Full-Stack", "estudo-digitando", 50);
+
+  renderizarProjetos();
+  ativarReveal();
+});
+
 const projetos = [
   {
     nome: "App de Mover Cursor",
@@ -82,10 +90,3 @@ function ativarReveal() {
   elementos.forEach((el) => observer.observe(el));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  digitarTexto("Fabrizzio Conrado", "nome-digitando", 100);
-  digitarTexto("Estudante de Engenharia de Software | Futuro Dev Full-Stack", "estudo-digitando", 50);
-
-  renderizarProjetos();
-  ativarReveal();
-});
