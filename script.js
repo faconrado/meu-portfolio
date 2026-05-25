@@ -51,6 +51,12 @@ const projetos = [
     linguagens: "HTML • JavaScript • CSS",
     link: "https://github.com/faconrado/siteTattoo---Portifolio.git",
   },
+    {
+    nome: "Site Treino Academia",
+    descricao: "Treinos para academia em HTML/CSS/JS",
+    linguagens: "HTML • JavaScript • CSS",
+    link: "https://github.com/faconrado/siteTreino.git",
+  },
 ];
 
 function renderizarProjetos() {
