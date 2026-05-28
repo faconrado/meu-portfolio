@@ -57,6 +57,13 @@ const projetos = [
     linguagens: "HTML • JavaScript • CSS",
     link: "https://github.com/faconrado/siteTreino.git",
   },
+    {
+    nome: "Site Artesanato Dorcas - Igreja Bastista",
+    descricao: "Site de fotos para o grupo de artesanato da igreja em HTML/CSS/JS",
+    linguagens: "HTML • JavaScript • CSS",
+    link: "https://faconrado.github.io/ArtesanatoDorcas/",
+  },
+
 ];
 
 function renderizarProjetos() {
