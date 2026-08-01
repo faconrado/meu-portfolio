@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const projetos = [
   {
+    nome: "Agente Macro IA",
+    descricao:
+      "Plataforma em desenvolvimento para registro de refeições e acompanhamento de macronutrientes pelo WhatsApp.",
+    linguagens:
+      "Node.js • TypeScript • NestJS • Prisma • WhatsApp Cloud API",
+    link: "https://faconrado.github.io/meu-portfolio/agente-macro-ia/",
+  },
+  {
     nome: "App de Mover Cursor",
     descricao: "Automação com Python",
     linguagens: "Python",
@@ -51,13 +59,13 @@ const projetos = [
     linguagens: "HTML • JavaScript • CSS",
     link: "https://github.com/faconrado/siteTattoo---Portifolio.git",
   },
-    {
+  {
     nome: "Site Treino Academia",
     descricao: "Treinos para academia em HTML/CSS/JS",
     linguagens: "HTML • JavaScript • CSS",
     link: "https://github.com/faconrado/siteTreino.git",
   },
-    {
+  {
     nome: "Site Artesanato Dorcas - Igreja Bastista",
     descricao: "Site de fotos para o grupo de artesanato da igreja em HTML/CSS/JS",
     linguagens: "HTML • JavaScript • CSS",
@@ -102,4 +110,3 @@ function ativarReveal() {
 
   elementos.forEach((el) => observer.observe(el));
 }
-
